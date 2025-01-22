@@ -20,10 +20,10 @@ import { useStore } from 'vuex'
 export default defineComponent({
   setup() {
     const store = useStore()
-    const connections = computed(() => store.state.connections)
+    const connections = computed(() => store.state.connections.connections)
 
     const getBlock = (nodeId: number) => {
-      for (const block of store.state.blocks) {
+      for (const block of store.state.blocks.blocks) {
         // const index = nodeId % 10
         const node = block.nodes.find((n: { id: number }) => n.id === nodeId)
         if (node) {

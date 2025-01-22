@@ -56,7 +56,7 @@ export default defineComponent({
     }
 
     const selectNode = (index: number) => {
-      const activeNode = store.state.activeNode
+      const activeNode = store.state.activeNode.activeNode
 
       if (activeNode === null) {
         store.commit('setActiveNode', index)

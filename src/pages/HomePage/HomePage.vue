@@ -31,20 +31,20 @@ export default defineComponent({
   components: { Block, Connections },
   setup() {
     const store = useStore()
-    const blocks = computed(() => store.state.blocks)
+    const blocks = computed(() => store.state.blocks.blocks)
 
-    const connections = computed(() => store.state.connections)
+    const connections = computed(() => store.state.connections.connections)
 
     const addBlock = () => {
       store.commit('addBlock', {
         x: Math.floor(Math.random() * 500),
         y: Math.floor(Math.random() * 500),
-        id: store.state.blocks.length + 1,
+        id: store.state.blocks.blocks.length + 1,
         nodes: [
-          { id: store.state.blocks.length * 10 + 0, x: 0, y: 0 },
-          { id: store.state.blocks.length * 10 + 1, x: 100, y: 0 },
-          { id: store.state.blocks.length * 10 + 2, x: 100, y: 100 },
-          { id: store.state.blocks.length * 10 + 3, x: 0, y: 100 },
+          { id: store.state.blocks.blocks.length * 10 + 0, x: 0, y: 0 },
+          { id: store.state.blocks.blocks.length * 10 + 1, x: 100, y: 0 },
+          { id: store.state.blocks.blocks.length * 10 + 2, x: 100, y: 100 },
+          { id: store.state.blocks.blocks.length * 10 + 3, x: 0, y: 100 },
         ],
       })
     }
